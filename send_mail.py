@@ -8,7 +8,8 @@ from getpass import getpass
 # password = "1234@asdf"
 
 def send_mail(text="body", subject="hello", to_emails=None, html=None):
-    assert isinstance(to_emails, list)
+    if not isinstance(to_emails, list):
+        raise AssertionError
     username = input("Enter Sender Mail ID (ex:- sender@gmail.com): ")
     password = getpass("Enter your valid password: ")
 

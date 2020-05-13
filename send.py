@@ -19,7 +19,8 @@ def format_msg(my_name="User", my_website="cfe.sh"):
 
 
 def send(name, website=None, to_email=None, verbose=False):
-    assert to_email != None
+    if to_email == None:
+        raise AssertionError
     if website != None:
         msg = format_msg(my_name=name, my_website=website)
     else:
